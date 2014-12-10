@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><% content 'title' %>| gulp-env page</title>
+  <meta name="description" content="">
+  <meta name="keywords" content=""/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <!-- build:css css/app.css -->
+  <link rel="stylesheet" href="css/common.css">
+  <!-- endbuild -->
+</head>
+<body>
+  <div class="ly-container">
+    <% content %>
+  </div>
+  <!--[if lt IE 9]>
+    <!-- build:js js/html5shiv.min.js -->
+    <script src="../bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <!-- endbuild -->
+  <![endif]-->
+
+  <!-- build:js js/vendor.js -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/jquery-backstretchy/jquery.backstretch.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js js/app.js -->
+  <script src="js/common/foo.js"></script>
+  <script src="js/common/bar.js"></script>
+  <!-- endbuild -->
+</body>
+</html>

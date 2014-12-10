@@ -1,0 +1,77 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+$facebook-x: 0px;
+$facebook-y: 0px;
+$facebook-offset-x: 0px;
+$facebook-offset-y: 0px;
+$facebook-width: 32px;
+$facebook-height: 32px;
+$facebook-total-width: 32px;
+$facebook-total-height: 96px;
+$facebook-image: '../img/sprite.png';
+$facebook: 0px 0px 0px 0px 32px 32px 32px 96px '../img/sprite.png';
+$insta-x: 0px;
+$insta-y: 32px;
+$insta-offset-x: 0px;
+$insta-offset-y: -32px;
+$insta-width: 32px;
+$insta-height: 32px;
+$insta-total-width: 32px;
+$insta-total-height: 96px;
+$insta-image: '../img/sprite.png';
+$insta: 0px 32px 0px -32px 32px 32px 32px 96px '../img/sprite.png';
+$twitter-x: 0px;
+$twitter-y: 64px;
+$twitter-offset-x: 0px;
+$twitter-offset-y: -64px;
+$twitter-width: 32px;
+$twitter-height: 32px;
+$twitter-total-width: 32px;
+$twitter-total-height: 96px;
+$twitter-image: '../img/sprite.png';
+$twitter: 0px 64px 0px -64px 32px 32px 32px 96px '../img/sprite.png';
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}

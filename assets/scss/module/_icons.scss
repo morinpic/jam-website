@@ -1,0 +1,12 @@
+.icon {
+  display: inline-block;
+  &.icon-facebook {
+    @include sprite($facebook);
+  }
+  &.icon-twitter {
+    @include sprite($twitter);
+  }
+  &.icon-insta {
+    @include sprite($insta);
+  }
+}
